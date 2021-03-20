@@ -1,0 +1,14 @@
+
+main {
+    margin-top: 5%;
+}
+
+#question-form {
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+#question-list {
+    margin-left: 5%;
+    height: 600px;
+    overflow-y: scroll;
+}

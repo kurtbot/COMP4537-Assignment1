@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <link rel="stylesheet" href="./css/control.css">
+    <link rel="stylesheet" href="./css/studentQuiz.css">
+</head>
+
+<body>
+    <div>
+        <a class="button-link btn-primary btn" href="./student.html">Back to Student Quiz List</a>
+    </div>
+    <main id="main">
+        <h1 id="question-header">
+            
+        </h1>
+        <div id="question-list">
+    
+        </div>
+        <div id="submit-data">
+
+        </div>
+    </main>
+    <script src="./js/studentQuiz.js"></script>
+    <script>
+        let quiz_id = localStorage.getItem('quiz_id');
+        let quiz_name = localStorage.getItem('quiz_name');
+
+        let quiz = new Quiz(quiz_id, quiz_name);
+        quiz.load().then(() => {
+            quiz.renderTake('question-list');
+        }, () => {});
+        
+        document.getElementById('question-header').innerText = quiz_name;
+    </script>
+</body>
+
+</html>

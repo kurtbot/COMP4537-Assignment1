@@ -1,0 +1,33 @@
+input.add-quiz {
+    padding: 5px;
+}
+
+button.add-quiz {
+    border: 0;
+    height: auto;
+    background-color: cadetblue;
+    color: white;
+    padding: 5px;
+}
+
+button.add-quiz:hover{
+    background-color: rgb(63, 102, 104);
+    color: white;
+}
+
+div.add-quiz-input {
+    background-color: azure;
+    text-align: center;
+}
+
+div#quiz-list {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+div#quiz-input-alert {
+    color: red;
+}

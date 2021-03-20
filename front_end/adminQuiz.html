@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <link rel="stylesheet" href="./css/control.css">
+    <link rel="stylesheet" href="./css/adminQuiz.css">
+</head>
+
+<body>
+    <div>
+        <a class="button-link btn-primary btn" href="./admin.html">Back to Admin Quiz List</a>
+    </div>
+    <main>
+        <div id="question-form-header">Add Question</div>
+        <div id="question-form">
+        </div>
+        <hr>
+        <div id="question-list-header">Update Questions</div>
+        <div id="question-list">
+        </div>
+    </main>
+    <script src="./js/adminQuiz.js"></script>
+    <script>
+        let quiz_id = localStorage.getItem('quiz_id');
+        let quiz_name = localStorage.getItem('quiz_name');
+
+        let quiz = new Quiz(quiz_id, quiz_name);
+        quiz.load().then(() => {
+            quiz.renderEdit('question-form');
+            quiz.renderUpdate('question-list');
+        }, () => { console.log('error from load'); });
+    </script>
+</body>
+
+</html>
